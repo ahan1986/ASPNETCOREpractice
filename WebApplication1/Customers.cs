@@ -2,6 +2,7 @@
 
 namespace WebApplication1
 {
+    // Model template
     public class Customers
     {
         public int Id { get; set; }
