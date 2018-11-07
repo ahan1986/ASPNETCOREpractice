@@ -1,0 +1,25 @@
+﻿@page "{id:int}"
+@model WebApplication1.Pages.EditModel
+<!-- The routing constraint"{id:int}" tells the page to accept requests to the page that contain int route data. If a request to the page doesn't contain route data that can be converted to an int, the runtime returns an HTTP 404 (not found) error. To make the ID optional, append ? to the route constraint : "{id:int?}"-->
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Customer.Id" type="hidden" />
+
+    <div>
+        <label asp-for="Customer.Name"></label>
+        <div>
+            <input asp-for="Customer.Name" />
+            <span asp-validation-for="Customer.Name"></span>
+        </div>
+    </div> 
+
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
